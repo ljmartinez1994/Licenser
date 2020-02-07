@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejemplo Licenser</string>
+    <string name="view_on_github">Ver en GitHub</string>
+    <string name="show_dialog">Mostrar diálogo</string>
+
+</resources>
