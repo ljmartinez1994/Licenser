@@ -12,6 +12,14 @@ public class License {
     public static int CREATIVE_COMMONS = 4;
     public static int ISC = 5;
     public static int NTP = 6;
+    public static int APACHEv1 = 7;
+    public static int APACHEv11 = 8;
+    public static int BSD3 = 9;
+    public static int BSD4 = 10;
+    public static int FREEBSD = 11;
+    public static int BSL = 12;
+    public static int GNU2 = 13;
+    public static int GNU21 = 14;
 
     static String getApacheLicense() {
         return "Licensed under the Apache License, Version 2.0 (the \"License\").<br>" +
@@ -112,5 +120,321 @@ public class License {
                 "suitability this software for any purpose. It is provided \"as is\" " +
                 "without express or implied warranty.";
     }
+
+    static String getApache1License() {
+        return " Copyright (c) 1995-1999 The Apache Group.  All rights reserved" +
+                "<br>" +
+                "Redistribution and use in source and binary forms, with or without" +
+                " modification, are permitted provided that the following conditions" +
+                " are met: " +
+                "<br>" +
+                "1. Redistributions of source code must retain the above copyright" +
+                " notice, this list of conditions and the following disclaimer." +
+                "<br>" +
+                "2. Redistributions in binary form must reproduce the above copyright" +
+                " notice, this list of conditions and the following disclaimer in" +
+                " the documentation and/or other materials provided with the" +
+                " distribution." +
+                "<br>" +
+                "3. All advertising materials mentioning features or use of this" +
+                " software must display the following acknowledgment:" +
+                "<br>"+"This product includes software developed by the Apache Group" +
+                " for use in the Apache HTTP server project (http://www.apache.org/)." +
+                "<br>" +
+                "4. The names Apache Server and Apache Group must not be used to" +
+                " endorse or promote products derived from this software without" +
+                " prior written permission. For written permission, please contact" +
+                " apache@apache.org." +
+                " <br>" +
+                " 5. Products derived from this software may not be called Apache" +
+                " nor may Apache appear in their names without prior written" +
+                " permission of the Apache Group." +
+                " <br>" +
+                " 6. Redistributions of any form whatsoever must retain the following" +
+                " acknowledgment: <br>" +
+                " This product includes software developed by the Apache Group" +
+                " for use in the Apache HTTP server project (http://www.apache.org/)." +
+                " <br>" +
+                " THIS SOFTWARE IS PROVIDED BY THE APACHE GROUP ``AS IS'' AND ANY" +
+                " EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE" +
+                " IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR" +
+                " PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE APACHE GROUP OR" +
+                " ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL," +
+                " SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT" +
+                " NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" +
+                " LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)" +
+                " HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT," +
+                " STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)" +
+                " ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED" +
+                " OF THE POSSIBILITY OF SUCH DAMAGE." +
+                " <br>" +
+                " This software consists of voluntary contributions made by many" +
+                " individuals on behalf of the Apache Group and was originally based" +
+                " on public domain software written at the National Center for" +
+                " Supercomputing Applications, University of Illinois, Urbana-Champaign." +
+                " For more information on the Apache Group and the Apache HTTP server" +
+                " project, please see <http://www.apache.org/>.";
+    }
+
+    static String getApache11License() {
+        return " The Apache Software License, Version 1.1" +
+                "<br>" +
+                "Copyright (c) 2000 The Apache Software Foundation.  All rights" +
+                " reserved." +
+                "<br>" +
+                "Redistribution and use in source and binary forms, with or without" +
+                " modification, are permitted provided that the following conditions" +
+                " are met:" +
+                "<br>" +
+                "1. Redistributions of source code must retain the above copyright" +
+                " notice, this list of conditions and the following disclaimer." +
+                "<br>" +
+                "2. Redistributions in binary form must reproduce the above copyright" +
+                "notice, this list of conditions and the following disclaimer in" +
+                "the documentation and/or other materials provided with the" +
+                "distribution." +
+                "<br>" +
+                "3. The end-user documentation included with the redistribution," +
+                " if any, must include the following acknowledgment:" +
+                "<br>"+
+                " This product includes software developed by the" +
+                " Apache Software Foundation (http://www.apache.org/)." +
+                " Alternately, this acknowledgment may appear in the software itself," +
+                " if and wherever such third-party acknowledgments normally appear." +
+                "<br>" +
+                "4. The names \"Apache\" and \"Apache Software Foundation must" +
+                " not be used to endorse or promote products derived from this" +
+                " software without prior written permission. For written" +
+                " permission, please contact apache@apache.org." +
+                " " +
+                "5. Products derived from this software may not be called Apache," +
+                " nor may Apache appear in their name, without prior written" +
+                " permission of the Apache Software Foundation." +
+                "<br>" +
+                " THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED" +
+                " WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES" +
+                " OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" +
+                " DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR" +
+                " ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL," +
+                " SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT" +
+                " LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF" +
+                " USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" +
+                " ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY," +
+                " OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT" +
+                " OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF" +
+                " SUCH DAMAGE." +
+                " <br>"+
+                " This software consists of voluntary contributions made by many" +
+                " individuals on behalf of the Apache Software Foundation.  For more" +
+                " information on the Apache Software Foundation, please see" +
+                " <http://www.apache.org/>." +
+                "<br>" +
+                " Portions of this software are based upon public domain software" +
+                " originally written at the National Center for Supercomputing Applications," +
+                " University of Illinois, Urbana-Champaign.";
+    }
+
+    static String getBSD3License() {
+        return " Redistribution and use in source and binary forms, with or without" +
+                "modification, are permitted provided that the following conditions are" +
+                "met:" +
+                "<br>" +
+                " (1) Redistributions of source code must retain the above copyright" +
+                " notice, this list of conditions and the following disclaimer. " +
+                "<br>" +
+                " (2) Redistributions in binary form must reproduce the above copyright" +
+                " notice, this list of conditions and the following disclaimer in" +
+                " the documentation and/or other materials provided with the" +
+                " distribution." +
+                "<br>" +
+                " (3)The name of the author may not be used to" +
+                " endorse or promote products derived from this software without" +
+                " specific prior written permission." +
+                "<br>" +
+                "THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR" +
+                "IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED" +
+                "WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" +
+                "DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT," +
+                "INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" +
+                "(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR" +
+                "SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)" +
+                "HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT," +
+                "STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING" +
+                "IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE" +
+                "POSSIBILITY OF SUCH DAMAGE. ";
+    }
+
+    static String getBSD4License() {
+        return "Copyright (c) 1993 The Regents of the University of California. All" +
+                "rights reserved." +
+                "<br>" +
+                "This software was developed by the Computer Systems Engineering group" +
+                "at Lawrence Berkeley Laboratory under DARPA contract BG 91-66 and" +
+                "contributed to Berkeley." +
+                "<br>" +
+                "All advertising materials mentioning features or use of this software" +
+                "must display the following acknowledgement: This product includes" +
+                "software developed by the University of California, Lawrence Berkeley" +
+                "Laboratory." +
+                "<br>" +
+                "Redistribution and use in source and binary forms, with or without" +
+                "modification, are permitted provided that the following conditions are" +
+                "met:" +
+                "<br>" +
+                "    1. Redistributions of source code must retain the above copyright" +
+                "    notice, this list of conditions and the following disclaimer." +
+                "<br>" +
+                "    2. Redistributions in binary form must reproduce the above copyright" +
+                "    notice, this list of conditions and the following disclaimer in" +
+                "    the documentation and/or other materials provided with the" +
+                "    distribution." +
+                "<br>" +
+                "    3. All advertising materials mentioning features or use of this" +
+                "    software must display the following acknowledgement: This product" +
+                "    includes software developed by the University of California," +
+                "    Berkeley and its contributors." +
+                "" +
+                "    4. Neither the name of the University nor the names of its" +
+                "    contributors may be used to endorse or promote products derived" +
+                "    from this software without specific prior written permission." +
+                "<br>" +
+                "THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS''" +
+                "AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO," +
+                "THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR" +
+                "PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS" +
+                "BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR" +
+                "CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF" +
+                "SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR" +
+                "BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY," +
+                "WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE" +
+                "OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN" +
+                "IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. ";
+    }
+
+    static String getFreeBSDLicense() {
+        return "The FreeBSD Copyright" +
+                "<br>" +
+                "Copyright 1992-2012 The FreeBSD Project. All rights reserved." +
+                "<br>" +
+                "Redistribution and use in source and binary forms, with or without" +
+                "modification, are permitted provided that the following conditions are" +
+                "met:" +
+                "<br>" +
+                "1. Redistributions of source code must retain the above copyright notice," +
+                "this list of conditions and the following disclaimer." +
+                "<br>" +
+                "2. Redistributions in binary form must reproduce the above copyright notice," +
+                "this list of conditions and the following disclaimer in the documentation" +
+                "and/or other materials provided with the distribution." +
+                "<br>" +
+                "THIS SOFTWARE IS PROVIDED BY THE FREEBSD PROJECT ``AS IS'' AND ANY EXPRESS" +
+                "OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES" +
+                "OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN" +
+                "NO EVENT SHALL THE FREEBSD PROJECT OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT," +
+                "INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" +
+                "(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" +
+                "LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" +
+                "ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT" +
+                "(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF" +
+                "THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." +
+                "<br>" +
+                "The views and conclusions contained in the software and documentation" +
+                "are those of the authors and should not be interpreted as representing" +
+                "official policies, either expressed or implied, of the FreeBSD" +
+                "Project. ";
+    }
+
+    static String getBSLLicense() {
+        return "Boost Software License - Version 1.0 - August 17th, 2003" +
+                "<br>" +
+                "Permission is hereby granted, free of charge, to any person or organization" +
+                "obtaining a copy of the software and accompanying documentation covered by" +
+                "this license (the \"Software\") to use, reproduce, display, distribute," +
+                "execute, and transmit the Software, and to prepare derivative works of the" +
+                "Software, and to permit third-parties to whom the Software is furnished to" +
+                "do so, all subject to the following:" +
+                "<br>" +
+                "The copyright notices in the Software and this entire statement, including" +
+                "the above license grant, this restriction and the following disclaimer," +
+                "must be included in all copies of the Software, in whole or in part, and" +
+                "all derivative works of the Software, unless such copies or derivative" +
+                "works are solely in the form of machine-executable object code generated by" +
+                "a source language processor." +
+                "<br>" +
+                "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR" +
+                "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY," +
+                "FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT" +
+                "SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE" +
+                "FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE," +
+                "ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER" +
+                "DEALINGS IN THE SOFTWARE. ";
+    }
+
+    static String getBSDPatentLicense() {
+        return "Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:" +
+                "<br>" +
+                "1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer." +
+                "<br>" +
+                "2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in " +
+                "the documentation and/or other materials provided with the distribution." +
+                "<br>" +
+                "Subject to the terms and conditions of this license, each copyright holder and contributor hereby grants to those receiving rights " +
+                "under this license a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except for failure to satisfy the " +
+                "conditions of this license) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer this software," +
+                " where such license applies only to those patent claims, already acquired or hereafter acquired, licensable by such copyright holder or " +
+                "contributor that are necessarily infringed by:" +
+                "<br>" +
+                "(a) their Contribution(s) (the licensed copyrights of copyright holders and non-copyrightable additions of contributors, in source or binary form) alone; or" +
+                "<br>" +
+                "(b) combination of their Contribution(s) with the work of authorship to which such Contribution(s) was added by such copyright holder or contributor, " +
+                "if, at the time the Contribution is added, such addition causes such combination to be necessarily infringed. The patent license shall not apply " +
+                "to any other combinations which include the Contribution." +
+                "<br>" +
+                "Except as expressly stated above, no rights or licenses from any copyright holder or contributor is granted under this license, " +
+                "whether expressly, by implication, estoppel or otherwise." +
+                "<br>" +
+                "DISCLAIMER" +
+                "<br>" +
+                "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, " +
+                "BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL " +
+                "THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES " +
+                "(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) " +
+                "HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) " +
+                "ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.";
+    }
+
+    static String getGNU2License() {
+        return "This program is free software; you can redistribute it and/or" +
+                "modify it under the terms of the GNU General Public License" +
+                "as published by the Free Software Foundation; either version 2" +
+                "of the License, or (at your option) any later version." +
+                "<br>" +
+                "This program is distributed in the hope that it will be useful," +
+                "but WITHOUT ANY WARRANTY; without even the implied warranty of" +
+                "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the" +
+                "GNU General Public License for more details." +
+                "<br>" +
+                "You should have received a copy of the GNU General Public License" +
+                "along with this program; if not, write to the Free Software" +
+                "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.";
+    }
+
+    static String getGNU21License() {
+        return "" +
+                "This library is free software; you can redistribute it and/or" +
+                "modify it under the terms of the GNU Lesser General Public" +
+                "License as published by the Free Software Foundation; either" +
+                "version 2.1 of the License, or (at your option) any later version." +
+                "<br>" +
+                "This library is distributed in the hope that it will be useful," +
+                "but WITHOUT ANY WARRANTY; without even the implied warranty of" +
+                "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU" +
+                "Lesser General Public License for more details." +
+                "<br>" +
+                "You should have received a copy of the GNU Lesser General Public" +
+                "License along with this library; if not, write to the Free Software" +
+                "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA.";
+    }
+
 
 }

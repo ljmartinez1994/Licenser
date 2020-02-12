@@ -18,6 +18,15 @@ public class Licenser {
     private List<Library> creativeCommonsLibraries;
     private List<Library> iscLibraries;
     private List<Library> ntpLibraries;
+    private List<Library> apache1Libraries;
+    private List<Library> apache11Libraries;
+    private List<Library> bsdLibraries;
+    private List<Library> bsd4Libraries;
+    private List<Library> freeBsdLibraries;
+    private List<Library> bslLibraries;
+    private List<Library> bsdPatentLibraries;
+    private List<Library> gnu2Libraries;
+    private List<Library> gnu21Libraries;
 
     private StringBuilder stringBuilder;
     private String noticeTitle = "Notices for files:";
@@ -26,6 +35,15 @@ public class Licenser {
     public Licenser() {
 
         apacheLibraries = new ArrayList<>();
+        gnu2Libraries = new ArrayList<>();
+        gnu21Libraries = new ArrayList<>();
+        bsdPatentLibraries = new ArrayList<>();
+        bslLibraries = new ArrayList<>();
+        freeBsdLibraries = new ArrayList<>();
+        bsdLibraries = new ArrayList<>();
+        bsd4Libraries = new ArrayList<>();
+        apache11Libraries = new ArrayList<>();
+        apache1Libraries=new ArrayList<>();
         mitLibraries = new ArrayList<>();
         gnuLibraries = new ArrayList<>();
         creativeCommonsLibraries = new ArrayList<>();
@@ -54,6 +72,22 @@ public class Licenser {
             iscLibraries.add(library);
         else if (library.getLicense()==License.NTP)
             ntpLibraries.add(library);
+        else if (library.getLicense()==License.APACHEv1)
+            apache1Libraries.add(library);
+        else if (library.getLicense()==License.APACHEv11)
+            apache11Libraries.add(library);
+        else if (library.getLicense()==License.BSD3)
+            bsdLibraries.add(library);
+        else if (library.getLicense()==License.BSD4)
+            bsd4Libraries.add(library);
+        else if (library.getLicense()==License.FREEBSD)
+            freeBsdLibraries.add(library);
+        else if (library.getLicense()==License.BSL)
+            bslLibraries.add(library);
+        else if (library.getLicense()==License.GNU2)
+            gnu2Libraries.add(library);
+        else if (library.getLicense()==License.GNU21)
+            gnu21Libraries.add(library);
         return this;
     }
 
@@ -128,6 +162,122 @@ public class Licenser {
             stringBuilder.append("<pre>"+License.getApacheLicense()+"</pre>");
         }
 
+        if (bsdLibraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:bsdLibraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getBSD3License()+"</pre>");
+        }
+
+        if (freeBsdLibraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:freeBsdLibraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getFreeBSDLicense()+"</pre>");
+        }
+
+        if (bsdPatentLibraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:bsdPatentLibraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getBSDPatentLicense()+"</pre>");
+        }
+
+        if (bslLibraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:bslLibraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getBSLLicense()+"</pre>");
+        }
+
+        if (gnu2Libraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:gnu2Libraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getGNU2License()+"</pre>");
+        }
+
+        if (gnu21Libraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:gnu21Libraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getGNU21License()+"</pre>");
+        }
+
+        if (bsd4Libraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:bsd4Libraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getBSD4License()+"</pre>");
+        }
+
+        if (apache11Libraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:apache11Libraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getApache11License()+"</pre>");
+        }
+        if (apache1Libraries.size()>0) {
+            stringBuilder.append("<h3>"+noticeTitle+"</h3>");
+            stringBuilder.append("<ul>");
+            for (Library library:apache1Libraries) {
+                if (library.getUrl() == null)
+                    stringBuilder.append("<li><b>"+library.getTitle()+"</b></li>");
+                else
+                    stringBuilder.append("<li><a href=\""+library.getUrl()+"\"><b>"+library.getTitle()+"</b></a></li>");
+            }
+            stringBuilder.append("</ul>");
+            stringBuilder.append("<pre>"+License.getApache1License()+"</pre>");
+        }
+
         if (mitLibraries.size()>0) {
             stringBuilder.append("<h3>"+noticeTitle+"</h3>");
             stringBuilder.append("<ul>");
@@ -193,5 +343,16 @@ public class Licenser {
             stringBuilder.append("<pre>"+License.getNTPLicense()+"</pre>");
         }
     }
-    
+
+    public List<Library> getApache1Libraries() {
+        return apache1Libraries;
+    }
+
+    public void setApache1Libraries(List<Library> apache1Libraries) {
+        this.apache1Libraries = apache1Libraries;
+    }
+
+    public List<Library> getApache11Libraries() {
+        return apache11Libraries;
+    }
 }
