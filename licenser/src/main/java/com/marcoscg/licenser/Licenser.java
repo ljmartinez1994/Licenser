@@ -51,7 +51,7 @@ public class Licenser {
         ntpLibraries = new ArrayList<>();
         stringBuilder = new StringBuilder();
 
-        stringBuilder.append("<html><head>");
+        stringBuilder.append("<!DOCTYPE html><html><head>");
         stringBuilder.append("<meta charset=\"utf-8\">\n");
         stringBuilder.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n");
         stringBuilder.append("<style>body{font-family:sans-serif;margin:0;padding-left:8px;padding-right:8px;}li{margin:0 0 4px;}" +
@@ -342,6 +342,7 @@ public class Licenser {
             stringBuilder.append("</ul>");
             stringBuilder.append("<pre>"+License.getNTPLicense()+"</pre>");
         }
+//        System.out.println("!!!!!!!!!!!!!!!!!! "+stringBuilder.toString());
     }
 
     public List<Library> getApache1Libraries() {

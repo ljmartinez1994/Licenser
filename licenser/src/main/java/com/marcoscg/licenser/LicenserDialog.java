@@ -55,7 +55,9 @@ public class LicenserDialog extends Licenser {
                 webView.getSettings().setMixedContentMode(0);
             webView.setWebViewClient(new WebViewClient(){
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                    System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
                     if (url != null && url.startsWith("http://") || url != null && url.startsWith("https://")) {
+//                      System.out.println("!!!!!!!!!!!!!!!!!! ENTROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
                         view.getContext().startActivity(
                                 new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                         return true;
@@ -64,7 +66,6 @@ public class LicenserDialog extends Licenser {
                     }
                 }
             });
-
             container.addView(webView, layoutParams);
             alertDialogBuilder.setView(container);
         } else throw new NullPointerException("You need to use an AppCompatActivity");
@@ -141,9 +142,11 @@ public class LicenserDialog extends Licenser {
     }
 
     public void show() {
-        if (webView.getUrl() == null)
+        if (webView.getUrl() == null) {
+//            System.out.println("@@@@@@@@@@@@@@@@@@ "+getHTMLContent(context));
             webView.loadData(getHTMLContent(context), "text/html; charset=UTF-8", null);
-
+//            webView.reload();
+        }
         if (alertDialog == null)
             alertDialog = alertDialogBuilder.create();
         alertDialog.show();

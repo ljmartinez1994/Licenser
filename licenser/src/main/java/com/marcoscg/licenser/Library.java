@@ -15,6 +15,9 @@ public class Library {
         this.license = license;
     }
 
+    public Library() {
+    }
+
     public String getTitle() {
         return title;
     }

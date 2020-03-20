@@ -1,11 +1,23 @@
 package com.marcoscg.licenser;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.util.TypedValue;
+import android.util.Xml;
 
 import androidx.annotation.ColorInt;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.xmlpull.v1.XmlPullParser.START_TAG;
 
 /**
  * Created by @MarcosCGdev on 11/02/2018.
@@ -58,6 +70,57 @@ public class Utils {
         int blue = Math.round(Math.min(255, Color.blue(color) + 255 * fraction));
 
         return Color.argb(alpha, red, green, blue);
+    }
+
+
+    public List<Library> getNotices(String fileName, Context context) {
+        List<Library> noticias = null;
+        XmlPullParser parser = Xml.newPullParser();
+        String xmlString = null;
+        AssetManager am = context.getAssets();
+        try {
+            InputStream is = am.open(fileName);
+            parser.setInput(is, null);
+            int evento = parser.getEventType();
+            Library noticiaActual = null;
+            while (evento != XmlPullParser.END_DOCUMENT) {
+                String etiqueta = null;
+                switch (evento) {
+                    case XmlPullParser.START_DOCUMENT:
+                        noticias = new ArrayList<Library>();
+                        break;
+                    case START_TAG:
+                        etiqueta = parser.getName();
+//                        System.out.println("############### "+etiqueta);
+                        if (etiqueta.equals("notice")) {
+                            noticiaActual = new Library();
+                        } else if (noticiaActual != null) {
+                            if (etiqueta.equals("name")) {
+                                noticiaActual.setTitle(parser.nextText());
+                            } else if (etiqueta.equals("url")) {
+                                noticiaActual.setUrl(
+                                        parser.nextText());
+                            } else if (etiqueta.equals("license")) {
+                                noticiaActual.setLicense(new License().getLicenseCode(parser.nextText()));
+                            }
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        etiqueta = parser.getName();
+//                        System.out.println("###############2 "+etiqueta);
+                        if (etiqueta.equals("notice") && noticiaActual != null) {
+                            noticias.add(noticiaActual);
+                        }           // Fin de condicional
+                        break;
+                }
+                evento = parser.next();
+            }
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return noticias;
     }
 
 }

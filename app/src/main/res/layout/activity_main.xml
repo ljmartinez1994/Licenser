@@ -12,4 +12,12 @@
         android:layout_centerInParent="true"
         android:text="@string/show_dialog" />
 
+    <Button
+        android:id="@+id/showDialogFromAssets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/show_dialog_from_assets"
+        android:layout_below="@id/showDialog"/>
+
 </RelativeLayout>

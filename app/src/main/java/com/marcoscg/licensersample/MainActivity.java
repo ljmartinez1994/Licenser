@@ -13,10 +13,14 @@ import android.view.View;
 import com.marcoscg.licenser.Library;
 import com.marcoscg.licenser.License;
 import com.marcoscg.licenser.LicenserDialog;
+import com.marcoscg.licenser.Utils;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private LicenserDialog licenserDialog;
+    private LicenserDialog licenserDialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +48,34 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+        licenserDialog2 = new LicenserDialog(this, R.style.DialogStyle)
+                .setTitle("Licenses")
+                .setCancelable(true)
+                .setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
+                .setCustomNoticeTitle("Notices for files:")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // TODO: 11/02/2018
+                    }
+                });
+
+                List<Library> libraries=new Utils().getNotices("notices.xml",getApplicationContext());
+                for (int i=0;i<libraries.size();i++){
+                    licenserDialog2.setLibrary(libraries.get(i));
+                }           // Fin de ciclo
+
         findViewById(R.id.showDialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 licenserDialog.show();
+            }
+        });
+
+        findViewById(R.id.showDialogFromAssets).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                licenserDialog2.show();
             }
         });
 

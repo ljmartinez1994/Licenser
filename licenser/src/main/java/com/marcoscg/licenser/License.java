@@ -138,7 +138,7 @@ public class License {
                 "<br>" +
                 "3. All advertising materials mentioning features or use of this" +
                 " software must display the following acknowledgment:" +
-                "<br>"+"This product includes software developed by the Apache Group" +
+                "<br>" + "This product includes software developed by the Apache Group" +
                 " for use in the Apache HTTP server project (http://www.apache.org/)." +
                 "<br>" +
                 "4. The names Apache Server and Apache Group must not be used to" +
@@ -196,7 +196,7 @@ public class License {
                 "<br>" +
                 "3. The end-user documentation included with the redistribution," +
                 " if any, must include the following acknowledgment:" +
-                "<br>"+
+                "<br>" +
                 " This product includes software developed by the" +
                 " Apache Software Foundation (http://www.apache.org/)." +
                 " Alternately, this acknowledgment may appear in the software itself," +
@@ -223,7 +223,7 @@ public class License {
                 " OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT" +
                 " OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF" +
                 " SUCH DAMAGE." +
-                " <br>"+
+                " <br>" +
                 " This software consists of voluntary contributions made by many" +
                 " individuals on behalf of the Apache Software Foundation.  For more" +
                 " information on the Apache Software Foundation, please see" +
@@ -434,6 +434,52 @@ public class License {
                 "You should have received a copy of the GNU Lesser General Public" +
                 "License along with this library; if not, write to the Free Software" +
                 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA.";
+    }
+
+    public int getLicenseCode(String license) {
+        // Validar NullPOinterException
+        try {
+            if (license.toLowerCase().contains("bsd")
+                    && license.toLowerCase().contains("3")) {
+                return BSD3;
+            }else if (license.toLowerCase().contains("bsd")
+                    && license.toLowerCase().contains("4")) {
+                return BSD4;
+            }else if (license.toLowerCase().contains("bsl")) {
+                return BSL;
+            }else if (license.toLowerCase().contains("bsd")
+                    && license.toLowerCase().contains("free")) {
+                return FREEBSD;
+            }else if (license.toLowerCase().contains("GNU")
+                    && license.toLowerCase().contains("2")
+                    && license.toLowerCase().contains("1")) {
+                return GNU21;
+            }else if (license.toLowerCase().contains("apache")
+                    && license.toLowerCase().contains("1.1")) {
+                return APACHEv11;
+            }else if (license.toLowerCase().contains("apache")
+                    && license.toLowerCase().contains("1")) {
+                return APACHEv1;
+            }else if (license.toLowerCase().contains("apache")
+                    && license.toLowerCase().contains("2")) {
+                return APACHE;
+            }else if (license.toLowerCase().contains("apache")) {
+                return APACHE;
+            }else if (license.toLowerCase().contains("ntp")) {
+                return NTP;
+            }else if (license.toLowerCase().contains("isc")) {
+                return ISC;
+            }else if (license.toLowerCase().contains("creativecommons")) {
+                return CREATIVE_COMMONS;
+            }else if (license.toLowerCase().contains("creative")
+                    && license.toLowerCase().contains("commons")) {
+                return CREATIVE_COMMONS;
+            }
+            return 0;
+        } catch (NullPointerException e) {
+            throw new NullPointerException();
+        }
+
     }
 
 
