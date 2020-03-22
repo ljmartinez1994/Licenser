@@ -143,7 +143,7 @@ public class LicenserDialog extends Licenser {
 
     public void show() {
         if (webView.getUrl() == null) {
-//            System.out.println("@@@@@@@@@@@@@@@@@@ "+getHTMLContent(context));
+            System.out.println("@@@@@@@@@@@@@@@@@@ "+getHTMLContent(context));
             webView.loadData(getHTMLContent(context), "text/html; charset=UTF-8", null);
 //            webView.reload();
         }

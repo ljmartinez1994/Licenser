@@ -91,7 +91,7 @@ public class Utils {
                         break;
                     case START_TAG:
                         etiqueta = parser.getName();
-//                        System.out.println("############### "+etiqueta);
+                        System.out.println("############### "+etiqueta);
                         if (etiqueta.equals("notice")) {
                             noticiaActual = new Library();
                         } else if (noticiaActual != null) {
@@ -101,7 +101,9 @@ public class Utils {
                                 noticiaActual.setUrl(
                                         parser.nextText());
                             } else if (etiqueta.equals("license")) {
-                                noticiaActual.setLicense(new License().getLicenseCode(parser.nextText()));
+                                String s=parser.nextText();
+                                System.out.println(new License().getLicenseCode(s)+" $$$$$$$$$$$$$$$$$$$$$$$$ "+s);
+                                noticiaActual.setLicense(new License().getLicenseCode(s));
                             }
                         }
                         break;

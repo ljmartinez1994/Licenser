@@ -436,8 +436,14 @@ public class License {
                 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA.";
     }
 
+    /**
+     * Determinar dado el nombre de una licencia el código que le corresponde
+     * @return  -1 en caso de no poseer licencia, un número entre 1 y 14
+     * @throws NullPointerException en caso de texto vacío
+     **/
     public int getLicenseCode(String license) {
         // Validar NullPOinterException
+
         try {
             if (license.toLowerCase().contains("bsd")
                     && license.toLowerCase().contains("3")) {
@@ -475,11 +481,42 @@ public class License {
                     && license.toLowerCase().contains("commons")) {
                 return CREATIVE_COMMONS;
             }
-            return 0;
         } catch (NullPointerException e) {
             throw new NullPointerException();
         }
+        return -1;
+    }
 
+    /**
+     * Determinar dado el nombre de una licencia el código que le corresponde
+     * @return  null en caso de no ser codigo legal sino se deolvera un texto de licencia
+     **/
+    public String getTextLicense(int licenseCode){
+        try{
+            if(licenseCode>=1 && licenseCode<=14){
+                switch (licenseCode){
+                    case 1: return getApacheLicense();
+                    case 2: return getMITLicense();
+                    case 3: return getGNULicense();
+                    case 4: return getCreativeCommonsLicense();
+                    case 5: return getISCLicense();
+                    case 6: return getNTPLicense();
+                    case 7: return getApache1License();
+                    case 8: return getApache11License();
+                    case 9: return getApacheLicense();
+                    case 10: return getBSD3License();
+                    case 11: return getBSD4License();
+                    case 12: return getFreeBSDLicense();
+                    case 13: return getGNU2License();
+                    case 14: return getGNU21License();
+                }           // End of switch
+            }else{
+                throw new IllegalArgumentException("You have to pass a number between 1 and 14");
+            }
+        }catch (NumberFormatException e){
+            throw new NumberFormatException("A number is required");
+        }
+        return null;
     }
 
 

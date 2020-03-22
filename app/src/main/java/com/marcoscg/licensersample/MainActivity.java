@@ -4,8 +4,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 .setCancelable(true)
                 .setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
                 .setCustomNoticeTitle("Notices for files:")
-                .setLibrary(new Library("Android Support Libraries",
+                /*.setLibrary(new Library("Android Support Libraries",
                         "https://developer.android.com/topic/libraries/support-library/index.html",
                         License.APACHE))
                 .setLibrary(new Library("Example Library",
@@ -40,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         License.APACHE))
                 .setLibrary(new Library("Licenser",
                         "https://github.com/marcoscgdev/Licenser",
-                        License.MIT))
+                        License.MIT))*/
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        licenserDialog2 = new LicenserDialog(this, R.style.DialogStyle)
+        /*licenserDialog2 = new LicenserDialog(this, R.style.DialogStyle)
                 .setTitle("Licenses")
                 .setCancelable(true)
                 .setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
@@ -64,21 +66,35 @@ public class MainActivity extends AppCompatActivity {
                 for (int i=0;i<libraries.size();i++){
                     licenserDialog2.setLibrary(libraries.get(i));
                 }           // Fin de ciclo
-
+*/
         findViewById(R.id.showDialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                licenserDialog.setLibrary(new Library("Android Support Libraries",
+                        "https://developer.android.com/topic/libraries/support-library/index.html",
+                        License.APACHE))
+                        .setLibrary(new Library("Example Library",
+                                "https://github.com/marcoscgdev",
+                                License.APACHE))
+                        .setLibrary(new Library("Licenser",
+                                "https://github.com/marcoscgdev/Licenser",
+                                License.MIT));
                 licenserDialog.show();
             }
         });
 
+
         findViewById(R.id.showDialogFromAssets).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                licenserDialog2.show();
+                List<Library> libraries=new Utils().getNotices("notices.xml",getApplicationContext());
+                for (int i=0;i<libraries.size();i++){
+                    License l=new License();
+                    licenserDialog.setLibrary(libraries.get(i));
+                }           // Fin de ciclo
+                licenserDialog.show();
             }
         });
-
     }
 
     @Override

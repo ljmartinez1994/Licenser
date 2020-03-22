@@ -342,7 +342,7 @@ public class Licenser {
             stringBuilder.append("</ul>");
             stringBuilder.append("<pre>"+License.getNTPLicense()+"</pre>");
         }
-//        System.out.println("!!!!!!!!!!!!!!!!!! "+stringBuilder.toString());
+        System.out.println("!!!!!!!!!!!!!!!!!! "+stringBuilder.toString());
     }
 
     public List<Library> getApache1Libraries() {
