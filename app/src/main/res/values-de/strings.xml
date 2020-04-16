@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Licenser-Probe</string>
-    <string name="view_on_github">Sicht auf GitHub</string>
-    <string name="show_dialog">Zeigen Sie Dialog</string>
-    <string name="show_dialog_from_assets">Dialog aus Assets anzeigen (XML)</string>
-</resources>
